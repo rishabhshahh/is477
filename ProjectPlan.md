@@ -72,7 +72,7 @@ We’ll merge the datasets by **date** and **location** so each record shows one
 We’ll document every step from **collection → storage → integration → analysis → sharing**, so the workflow is clear and repeatable.  
 
 ### Ethical Data Use  
-All data sources are public and contain no private information. We’ll follow each dataset’s license and credit the sources properly.  
+All data sources are public and contain no private information. We’ll follow each dataset’s license and credit the sources properly. We will make sure all data is from ethical sources and we will also cite authors that are credible as well. 
 
 ### Data Collection  
 We’ll use simple Python scripts or API calls to download the data automatically. Each run will record when and where the data came from.  
@@ -94,7 +94,7 @@ File names and small metadata notes (CSV + JSON) will be explained in the README
 We’ll calculate new metrics like daily average temperature and categorize air quality levels (e.g., “Good,” “Moderate,” “Unhealthy”).  
 
 ### Integration  
-We’ll merge the datasets by **date** and **city** using simple Pandas joins or SQL.  
+We’ll merge the datasets by **date** and **city** using simple Pandas joins or SQL. This makes it fairly simple but keeping explanatory variables may be a little harder to calcualte.  
 
 ### Data Quality  
 We’ll check for missing or duplicate entries and flag extreme or impossible values (like negative temperatures).  
@@ -104,7 +104,7 @@ Results will be summarized in a small `data_quality_report.md`.
 We’ll fill in missing values where possible and normalize measurements so they’re consistent across datasets.  
 
 ### Workflow Automation  
-A **Snakemake** or **bash** script will run the entire process—from data download to cleaned output—automatically.  
+A **Snakemake** or **bash** script will run the entire process—from data download to cleaned output—automatically. We may also look into other python libraries that may be better and we may be more comfortable with (subprocess, plumbum, Airflow, etc). For now we will use Snakemake/bash and if we are unable to figure out we will pivot to python.  
 
 ### Reproducibility  
 Anyone should be able to rerun the full workflow with a single command (`snakemake` or `bash run_all.sh`).  
