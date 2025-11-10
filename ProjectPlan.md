@@ -20,10 +20,10 @@ The goal isn’t to create a complicated model but to show how data can be **col
 ---
 
 ## Team and Roles  
-- **[Your Name #1] – Data Collection and Integration**  
+- **[Rishabh Shah] – Data Collection and Integration**  
   - Finds and downloads the traffic, pollution, and weather data.  
   - Cleans and merges the data into one file.  
-- **[Your Name #2] – Workflow and Documentation**  
+- **[Atharva Awasthi] – Workflow and Documentation**  
   - Builds the workflow automation (using Python or Snakemake).  
   - Writes clear instructions and metadata so others can reproduce the results.  
 
