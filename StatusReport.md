@@ -191,12 +191,11 @@ These steps will complete all remaining project requirements.
 
 ## **6. Individual Contributions**
 
-### **Rishabh Shahh**
+### **Rishabh Shah**
 
 * Created StatusReport.md and updated ProjectPlan.md.
 * Added acquisition + ethical handling documentation to Project.ipynb.
 
 ### **Atharva Awasthi**
 
-* Collected and cleaned traffic, weather, and air datasets.
-* Performed initial integration and generated `final_dataset.csv`.
+
