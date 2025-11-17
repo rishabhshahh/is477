@@ -197,5 +197,5 @@ These steps will complete all remaining project requirements.
 * Added acquisition + ethical handling documentation to Project.ipynb.
 
 ### **Atharva Awasthi**
-
+For this milestone, I collected and prepared the three datasets used in the project, including traffic, weather, and air quality data. I performed initial cleaning, standardized the date and location fields, and created the combined dataset stored as final_dataset.csv. I also contributed to the development of the Project.ipynb notebook by implementing integration logic and testing different merging strategies across the datasets.
 
