@@ -6,7 +6,7 @@
 
 ## **Team Members**
 
-* **Rishabh Shahh**
+* **Rishabh Shah**
 * **Atharva Awasthi**
 
 ---
