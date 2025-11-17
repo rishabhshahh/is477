@@ -6,7 +6,7 @@
 
 ## **Team Members**
 
-* **Rishabh Shahh** – Data acquisition, cleaning, integration, documentation
+* **Rishabh Shah** – Data acquisition, cleaning, integration, documentation
 * **Atharva Awasthi** – Workflow structure, analysis development, automation
 
 ---
@@ -66,7 +66,7 @@ All three datasets are stored in the project repository as:
 
 ## **4. Roles and Responsibilities**
 
-### **Rishabh Shahh**
+### **Rishabh Shah**
 
 * Acquire datasets and verify licensing/ethical use
 * Clean and standardize datasets
