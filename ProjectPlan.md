@@ -1,142 +1,209 @@
-# Project Plan  
-**Course:** Data Management and Integration  
-**Team:** Rishabh Shah and Atharva Awasthi
-**Project Title:** Smart City Data Pipeline: Connecting Traffic, Weather, and Air Quality Data  
+# **Project Plan – Milestone 2**
+
+## **Project Title**
+
+**Smart City Data Pipeline: Connecting Traffic, Weather, and Air Quality Data**
+
+## **Team Members**
+
+* **Rishabh Shahh** – Data acquisition, cleaning, integration, documentation
+* **Atharva Awasthi** – Workflow structure, analysis development, automation
 
 ---
 
-## Overview  
-Our project will build a simple, automated data pipeline that combines **traffic**, **weather**, and **pollution** data for a city such as Chicago or New York. By bringing these datasets together, we want to see how things like traffic volume and weather conditions affect air quality.  
+## **1. Overview**
 
-The goal isn’t to create a complicated model but to show how data can be **collected, cleaned, integrated, and analyzed** in a clear, reproducible way. This project will also demonstrate good data management, ethical data use, and transparency.
+The goal of this project is to build a simple, end-to-end data pipeline that connects three types of open data from the City of Chicago: **traffic volume**, **weather conditions**, and **air quality measurements**. By combining these datasets, we want to explore how daily traffic patterns and weather relate to local air quality.
 
----
-
-## Research Questions  
-1. How do traffic and weather patterns influence daily air quality?  
-2. Can we find trends, such as which days or conditions tend to have the worst air quality?  
-3. How can automation make data analysis and reporting easier for future city planners?
+This project follows the full data lifecycle—from collecting datasets, storing and organizing them, cleaning and integrating them, and finally producing a reproducible workflow and analysis. The final product will be an automated, transparent pipeline with complete documentation.
 
 ---
 
-## Team and Roles  
-- **[Rishabh Shah] – Data Collection and Integration**  
-  - Finds and downloads the traffic, pollution, and weather data.  
-  - Cleans and merges the data into one file.  
-- **[Atharva Awasthi] – Workflow and Documentation**  
-  - Builds the workflow automation (using Python or Snakemake).  
-  - Writes clear instructions and metadata so others can reproduce the results.  
+## **2. Research Questions**
 
-Both team members will share writing and reporting tasks.
+Our project is guided by the following questions:
 
----
+1. **How do traffic levels relate to daily air quality in Chicago?**
+2. **Do weather conditions (temperature, humidity, wind) appear to influence air quality patterns?**
+3. **Are there observable trends where traffic + weather together predict higher or lower pollution levels?**
 
-## Datasets  
-
-### 1. City Open Data (Traffic and Air Quality)  
-- **Source:** [Chicago Data Portal](https://data.cityofchicago.org/) or [NYC Open Data](https://opendata.cityofnewyork.us/)  
-- **Access:** CSV download or API request  
-- **What it includes:** Traffic flow, speed, crash counts, air quality readings (PM2.5, ozone, AQI).  
-- **Why it matters:** Helps us see how human activity relates to air quality.  
-- **License:** Publicly available for reuse (Open Data Commons).  
-
-### 2. NOAA Weather Data  
-- **Source:** [NOAA Climate Data Online API](https://www.ncdc.noaa.gov/cdo-web/webservices/v2)  
-- **Access:** REST API using Python (`requests`)  
-- **What it includes:** Daily temperature, wind speed, humidity, and precipitation.  
-- **Why it matters:** Weather can influence pollution levels.  
-- **License:** Public domain.  
-
-**Integration Plan:**  
-We’ll merge the datasets by **date** and **location** so each record shows one day’s weather, traffic, and air quality.
+These questions can be answered using descriptive analysis and simple exploratory visualizations.
 
 ---
 
-## Timeline  
+## **3. Datasets**
 
-| Week | Task | Who | Deliverable |
-|------|------|-----|-------------|
-| Sept 26 – Oct 7 | Form team and set up GitHub repo | All | Repository ready |
-| Oct 7 – Oct 14 | Write and submit Project Plan | All | `ProjectPlan.md` + release |
-| Oct 15 – Oct 25 | Collect and clean data | [Name #1] | `data_acquisition.py` |
-| Oct 26 – Nov 5 | Merge datasets and check quality | [Name #1] | Integrated CSV |
-| Nov 6 – Nov 11 | Write Status Report | All | `StatusReport.md` |
-| Nov 12 – Nov 25 | Automate workflow and create visuals | [Name #2] | `Snakefile`, charts |
-| Dec 4 – Dec 10 | Final report and GitHub release | All | `README.md` + final release |
+We will use **three independent datasets**, each coming from a trustworthy open-data source. All datasets include **date** and **location**, which allow them to be merged into a single table.
 
----
+### **Dataset 1 — Traffic Volume (Chicago Open Data)**
 
-## How This Meets Course Requirements  
+* **URL:** [https://data.cityofchicago.org/Transportation/Traffic-Tracker-Historical-Congestion-Estimates-by/t2qc-9pjd](https://data.cityofchicago.org/Transportation/Traffic-Tracker-Historical-Congestion-Estimates-by/t2qc-9pjd)
+* **Format:** CSV
+* **Key Columns:** `date`, `street`, `congestion_level`
+* **Purpose:** Measures congestion and traffic conditions across Chicago.
 
-### Data Lifecycle  
-We’ll document every step from **collection → storage → integration → analysis → sharing**, so the workflow is clear and repeatable.  
+### **Dataset 2 — Air Quality (Chicago Open Data)**
 
-### Ethical Data Use  
-All data sources are public and contain no private information. We’ll follow each dataset’s license and credit the sources properly. We will make sure all data is from ethical sources and we will also cite authors that are credible as well. 
+* **URL:** [https://data.cityofchicago.org/Environment/Air-Quality-Monitoring/hgnt-xx2f](https://data.cityofchicago.org/Environment/Air-Quality-Monitoring/hgnt-xx2f)
+* **Format:** CSV
+* **Key Columns:** `date`, `monitor_name`, `pm25`, `ozone`
+* **Purpose:** Provides pollutant readings from Chicago monitoring stations.
 
-### Data Collection  
-We’ll use simple Python scripts or API calls to download the data automatically. Each run will record when and where the data came from.  
+### **Dataset 3 — Weather Data (Open-Meteo API)**
 
-### Storage and Organization  
-Our project folder will look like this:
-data/
-raw/
-cleaned/
-integrated/
-scripts/
-acquisition/
-integration/
-analysis/
+* **API:** [https://api.open-meteo.com/v1/](https://api.open-meteo.com/v1/)
+* **Format:** JSON → converted to CSV
+* **Key Columns:** `date`, `temperature`, `wind_speed`, `humidity`
+* **Purpose:** Provides daily weather measurements for the Chicago area.
 
-File names and small metadata notes (CSV + JSON) will be explained in the README.
+All three datasets are stored in the project repository as:
 
-### Extraction and Enrichment  
-We’ll calculate new metrics like daily average temperature and categorize air quality levels (e.g., “Good,” “Moderate,” “Unhealthy”).  
-
-### Integration  
-We’ll merge the datasets by **date** and **city** using simple Pandas joins or SQL. This makes it fairly simple but keeping explanatory variables may be a little harder to calcualte.  
-
-### Data Quality  
-We’ll check for missing or duplicate entries and flag extreme or impossible values (like negative temperatures).  
-Results will be summarized in a small `data_quality_report.md`.  
-
-### Data Cleaning  
-We’ll fill in missing values where possible and normalize measurements so they’re consistent across datasets.  
-
-### Workflow Automation  
-A **Snakemake** or **bash** script will run the entire process—from data download to cleaned output—automatically. We may also look into other python libraries that may be better and we may be more comfortable with (subprocess, plumbum, Airflow, etc). For now we will use Snakemake/bash and if we are unable to figure out we will pivot to python.  
-
-### Reproducibility  
-Anyone should be able to rerun the full workflow with a single command (`snakemake` or `bash run_all.sh`).  
-We’ll include a `requirements.txt` file listing all software packages used.  
-
-### Metadata and Documentation  
-We’ll write a simple `data_dictionary.md` to explain each variable and its units.  
-The README will include author names, licenses, and citations.
+* `traffic.csv`
+* `AirQuality.csv`
+* `Weather.csv`
 
 ---
 
-## Constraints  
-- NOAA API has rate limits, so we may store data locally after one download.  
-- Some cities might not have complete data for every day.  
-- Large datasets could slow down analysis, so we’ll focus on smaller time ranges if needed.
+## **4. Roles and Responsibilities**
+
+### **Rishabh Shahh**
+
+* Acquire datasets and verify licensing/ethical use
+* Clean and standardize datasets
+* Perform initial integration into a single dataset
+* Maintain documentation in Project.ipynb
+
+### **Atharva Awasthi**
+
+* Develop workflow automation (Snakemake or script-based)
+* Create analysis and visualizations
+* Contribute to metadata, data dictionary, and README
+* Assist with integration and final presentation
+
+Both team members will contribute commits regularly to ensure clear evidence of participation.
 
 ---
 
-## Gaps or Questions  
-- We still need to pick the city (Chicago or NYC).  
-- We’ll decide which pollution measure (PM2.5 or AQI) works best.  
-- We may add simple charts instead of advanced modeling.  
+## **5. Timeline**
+
+| Task                                     | Owner             | Deadline | Status      |
+| ---------------------------------------- | ----------------- | -------- | ----------- |
+| Dataset acquisition                      | Rishabh           | Oct 10   | Done        |
+| Initial cleaning + standardization       | Rishabh           | Oct 15   | Done        |
+| Dataset integration                      | Rishabh + Atharva | Oct 20   | Done        |
+| Ethical review + licensing documentation | Rishabh           | Oct 22   | Done        |
+| Workflow structure setup                 | Atharva           | Nov 20   | In progress |
+| Data quality assessment                  | Both              | Nov 25   | Upcoming    |
+| Analysis + visualizations                | Atharva           | Dec 5    | Upcoming    |
+| Final metadata + data dictionary         | Both              | Dec 5    | Upcoming    |
+| Final README + reproducibility           | Both              | Dec 8    | Upcoming    |
+| Final release                            | Both              | Dec 10   | Upcoming    |
+
+We are currently ahead of schedule for data preparation.
 
 ---
 
-## References  
-- City of Chicago Data Portal – https://data.cityofchicago.org/  
-- NOAA Climate Data API – https://www.ncdc.noaa.gov/cdo-web/webservices/v2  
-- NYC Open Data – https://opendata.cityofnewyork.us/  
-- Pandas Documentation – https://pandas.pydata.org/  
-- Snakemake Workflow System – https://snakemake.readthedocs.io/  
+## **6. Ethical, Legal, and Policy Considerations**
+
+All data comes from open sources with **public licenses** allowing reuse:
+
+* Chicago Open Data Portal: data is free to use under the City’s Open Data Terms.
+* Open-Meteo API: unrestricted use for academic and research purposes.
+
+There is **no personal or identifying data** in any dataset.
+All sources are properly cited in the final report, and no terms of service are violated.
+
+We will also:
+
+* Document dataset licenses in the README
+* Store all raw data without modification
+* Provide clear attribution to data providers
 
 ---
 
-*This document will be tagged and released under `project-plan` in the team GitHub repository for grading.*
+## **7. Storage and Organization Strategy**
+
+We chose a simple, transparent folder structure:
+
+```
+/project
+    /raw_data
+        traffic.csv
+        AirQuality.csv
+        Weather.csv
+    /processed
+        final_dataset.csv
+    /scripts
+        integrate.py
+        clean.py
+    ProjectPlan.md
+    StatusReport.md
+    Project.ipynb
+```
+
+* Raw data stays untouched.
+* Processed data is generated by scripts or workflow rules.
+* Notebook provides visible documentation of decisions.
+
+---
+
+## **8. Extraction & Enrichment**
+
+We will:
+
+* Parse dates and convert everything to `YYYY-MM-DD`
+* Standardize location fields so joins work cleanly
+* Add derived variables such as:
+
+  * “AQI_Category”
+  * “Traffic_Intensity_Score”
+  * “Feels_Like_Temperature”
+
+This step is partly complete; we will finalize enrichment after formal data quality checks.
+
+---
+
+## **9. Data Integration Strategy**
+
+Datasets will be merged using:
+
+* **Primary Key 1:** `date`
+* **Primary Key 2:** `location` (or nearest comparable field)
+
+We already produced a merged dataset (`final_dataset.csv`) through cleaning + joining in Python.
+
+---
+
+## **10. Constraints**
+
+* Some weather variables may have missing values.
+* Chicago traffic coverage varies by neighborhood.
+* API rate limits require caching weather data if re-pulling.
+
+These constraints will be included in the data quality summary.
+
+---
+
+## **11. Gaps / Unknowns**
+
+* Final visualization strategy is still being decided.
+* We may include simple correlation metrics if data allows.
+* Workflow automation is still to be implemented using Snakemake.
+
+---
+
+## **12. Expected Final Deliverables**
+
+By the end of the project, we will provide:
+
+* Full analysis notebook
+* Snakemake workflow + run-all script
+* Cleaned + merged dataset (`final_dataset.csv`)
+* Data dictionary + metadata (DataCite style)
+* README with reproducibility instructions
+* Box folder with processed data
+* All raw datasets + citations
+
+---
+
+**This plan has been updated according to TA feedback and reflects the true structure and progress of our project.**
