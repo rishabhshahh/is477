@@ -1,0 +1,41 @@
+| Column          | Type     | Description                                         |
+| --------------- | -------- | --------------------------------------------------- |
+| Unnamed: 0      | integer  | Index column created during preprocessing.          |
+| SEGMENT_ID      | integer  | Unique identifier for each roadway traffic segment. |
+| SPEED           | float    | Observed average vehicle speed in miles per hour.   |
+| TRAVEL_TIME     | float    | Estimated time required to traverse the segment.    |
+| LENGTH          | float    | Length of the roadway segment in meters.            |
+| STREET          | string   | Name of the street where the segment is located.    |
+| DIRECTION       | string   | Cardinal travel direction (N, S, E, W).             |
+| FROM_STREET     | string   | Starting cross street of the segment.               |
+| TO_STREET       | string   | Ending cross street of the segment.                 |
+| STREET_HEADING  | string   | Textual orientation of the segment.                 |
+| BUS_COUNT       | float    | Number of buses detected in that interval.          |
+| MESSAGE_COUNT   | float    | Number of sensor or probe messages sent.            |
+| RECORD_ID       | float    | Identifier for the traffic measurement record.      |
+| START_LATITUDE  | float    | Latitude coordinate at the start of the segment.    |
+| START_LONGITUDE | float    | Longitude coordinate at the start of the segment.   |
+| END_LATITUDE    | float    | Latitude coordinate at the end of the segment.      |
+| END_LONGITUDE   | float    | Longitude coordinate at the end of the segment.     |
+| COMMENTS        | string   | Additional notes from the source dataset.           |
+| START_LOCATION  | string   | Human readable start location.                      |
+| END_LOCATION    | string   | Human readable end location.                        |
+| TEMP            | float    | Temperature in degrees Celsius.                     |
+| PRCP            | float    | Precipitation in millimeters.                       |
+| HMDT            | float    | Relative humidity percentage.                       |
+| WND_DIR         | float    | Wind direction in degrees.                          |
+| WND_SPD         | float    | Wind speed in meters per second.                    |
+| ATM_PRESS       | float    | Atmospheric pressure in hPa.                        |
+| Pm2.5           | float    | Fine particulate matter (microns < 2.5).            |
+| Pm10            | float    | Coarse particulate matter (microns < 10).           |
+| No2             | float    | Nitrogen dioxide concentration.                     |
+| So2             | float    | Sulfur dioxide concentration.                       |
+| Co              | float    | Carbon monoxide concentration.                      |
+| O3              | float    | Ozone concentration.                                |
+| Aqi             | float    | Air Quality Index value.                            |
+| TIME            | datetime | Timestamp of observation.                           |
+| DATE            | date     | Date extracted from TIME.                           |
+| YEAR            | integer  | Year extracted from TIME.                           |
+| MONTH           | integer  | Month extracted from TIME.                          |
+| DAY_OF_WEEK     | string   | Day name extracted from TIME.                       |
+| HOUR            | integer  | Hour of day extracted from TIME.                    |
