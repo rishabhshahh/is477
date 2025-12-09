@@ -653,6 +653,8 @@ This allows reuse, modification, and redistribution for academic and research pu
 * Weather Dataset
   [https://www.kaggle.com/code/sheemazain/weather-dataset-2024/notebook](https://www.kaggle.com/code/sheemazain/weather-dataset-2024/notebook)
 
+  Sivagnanam, Subhashini, Viswanath Nandigam, and Kai Lin. “Introducing the Open Science Chain: Protecting Integrity and Provenance of Research Data.” Practice and Experience in Advanced Research Computing (PEARC ’19), ACM, 2019, pp. 1–5.
+
 ### Software Tools Used
 
 * **Python** – Data processing and automation
