@@ -1,8 +1,13 @@
 import pandas as pd
 import numpy as np
+from pathlib import Path
 
-input_file = "data/processed/final_dataset.csv"
-output_file = "data/processed/final_dataset.csv"
+project_root = Path(__file__).resolve().parents[1]
+
+input_file = project_root / "data" / "processed" / "final_dataset.csv"
+output_dir = project_root / "data" / "cleaned"
+output_dir.mkdir(parents=True, exist_ok=True)
+output_file = output_dir / "final_dataset_cleaned.csv"
 
 df = pd.read_csv(input_file)
 
