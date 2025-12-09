@@ -32,7 +32,7 @@ def clean_final_df(df):
     for c in ["DIRECTION", "STREET_HEADING"]:
         if c in df.columns:
             df[c] = df[c].str.upper()
-
+    df = df.dropna(subset=["No2"])
     numeric_cols = [
         "SPEED", "LENGTH", "BUS_COUNT", "MESSAGE_COUNT", "RECORD_ID",
         "START_LATITUDE", "START_LONGITUDE", "END_LATITUDE", "END_LONGITUDE",

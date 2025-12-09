@@ -1,0 +1,63 @@
+Assuming unrestricted shared filesystem usage.
+host: Atharvas-MacBook-Pro-3.local
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+clean_data            1
+hash_cleaned          1
+hash_processed        1
+total                 4
+
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Dec  8 22:03:54 2025]
+localrule hash_processed:
+    input: data/processed/final_dataset.csv
+    output: results/processed_sha256.txt
+    jobid: 3
+    reason: Missing output files: results/processed_sha256.txt
+    resources: tmpdir=/var/folders/5_/638vlyvx5v57tb9j18y8bw_h0000gn/T
+[Mon Dec  8 22:03:54 2025]
+Finished jobid: 3 (Rule: hash_processed)
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Dec  8 22:03:54 2025]
+localrule clean_data:
+    input: data/processed/final_dataset.csv, results/processed_sha256.txt
+    output: data/cleaned/final_dataset_cleaned.csv
+    jobid: 2
+    reason: Missing output files: data/cleaned/final_dataset_cleaned.csv; Input files updated by another job: results/processed_sha256.txt
+    resources: tmpdir=/var/folders/5_/638vlyvx5v57tb9j18y8bw_h0000gn/T
+[Mon Dec  8 22:03:55 2025]
+Finished jobid: 2 (Rule: clean_data)
+2 of 4 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Dec  8 22:03:55 2025]
+localrule hash_cleaned:
+    input: data/cleaned/final_dataset_cleaned.csv
+    output: results/cleaned_sha256.txt
+    jobid: 1
+    reason: Missing output files: results/cleaned_sha256.txt; Input files updated by another job: data/cleaned/final_dataset_cleaned.csv
+    resources: tmpdir=/var/folders/5_/638vlyvx5v57tb9j18y8bw_h0000gn/T
+[Mon Dec  8 22:03:55 2025]
+Finished jobid: 1 (Rule: hash_cleaned)
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+[Mon Dec  8 22:03:55 2025]
+localrule all:
+    input: results/cleaned_sha256.txt
+    jobid: 0
+    reason: Input files updated by another job: results/cleaned_sha256.txt
+    resources: tmpdir=/var/folders/5_/638vlyvx5v57tb9j18y8bw_h0000gn/T
+[Mon Dec  8 22:03:55 2025]
+Finished jobid: 0 (Rule: all)
+4 of 4 steps (100%) done
+Complete log(s): /Users/atharvaawasthi/Desktop/IS477/is477/.snakemake/log/2025-12-08T220354.661159.snakemake.log
