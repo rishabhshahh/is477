@@ -211,13 +211,6 @@ The integration output is stored in:
 * `data/processed/final_dataset.csv`
 * `data/cleaned/final_dataset_cleaned.csv`
 
-Perfect — here is your **fully expanded, paste-ready `Data Quality` section** at **~850–900 words**, written strictly using **your real pipeline, real cleaning script, and real datasets**.
-
-👉 **Delete your current Data Quality section and paste EVERYTHING below under `## Data Quality`**
-
----
-
-````md
 ## Data Quality
 
 A formal data quality assessment was conducted to evaluate the reliability, consistency, and usability of each dataset before and after integration. Because this project integrates three independent public data sources (traffic, air pollution, and weather), careful attention to data quality was required to ensure meaningful results and full reproducibility. All quality checks and cleaning operations were implemented using Python with pandas and NumPy, primarily through the script `scripts/clean_data.py`.
