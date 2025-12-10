@@ -638,14 +638,18 @@ This allows reuse, modification, and redistribution for academic and research pu
 
 * Chicago Air Pollution Dataset
   [https://www.kaggle.com/datasets/asjad99/chicago-air-pollution](https://www.kaggle.com/datasets/asjad99/chicago-air-pollution)
+  Asjad99. *Chicago Air Pollution Dataset*. Kaggle, 2024.  
+https://www.kaggle.com/datasets/asjad99/chicago-air-pollution
 
 * Chicago Traffic Congestion Tracker
   [https://catalog.data.gov/dataset/chicago-traffic-tracker-historical-congestion-estimates-by-segment-2024-current](https://catalog.data.gov/dataset/chicago-traffic-tracker-historical-congestion-estimates-by-segment-2024-current)
+  City of Chicago. *Traffic Tracker – Historical Congestion Estimates by Segment (2024–Present)*. City of Chicago Open Data Portal, 2024.  
+https://catalog.data.gov/dataset/chicago-traffic-tracker-historical-congestion-estimates-by-segment-2024-current
 
 * Weather Dataset
   [https://www.kaggle.com/code/sheemazain/weather-dataset-2024/notebook](https://www.kaggle.com/code/sheemazain/weather-dataset-2024/notebook)
-
-  Sivagnanam, Subhashini, Viswanath Nandigam, and Kai Lin. “Introducing the Open Science Chain: Protecting Integrity and Provenance of Research Data.” Practice and Experience in Advanced Research Computing (PEARC ’19), ACM, 2019, pp. 1–5.
+  Zain, Sheemazain. *Chicago Weather Dataset 2024 (Derived from Open-Meteo)*. Kaggle, 2024.  
+https://www.kaggle.com/code/sheemazain/weather-dataset-2024/notebook
 
 ### Software Tools Used
 
@@ -660,9 +664,13 @@ This allows reuse, modification, and redistribution for academic and research pu
 
 * Snakemake Documentation – Workflow Automation
   [https://snakemake.readthedocs.io](https://snakemake.readthedocs.io)
+  Köster, Johannes, and Sven Rahmann. *Snakemake – A Scalable Bioinformatics Workflow Engine*.  
+https://snakemake.readthedocs.io
 
 * NIST Explanation of SHA-256
   [https://www.nist.gov](https://www.nist.gov)
+  National Institute of Standards and Technology (NIST). *Secure Hash Standard (SHA-256)*.  
+https://www.nist.gov
 
 These resources informed our understanding of **automation, reproducibility, and cryptographic integrity verification**.
 
