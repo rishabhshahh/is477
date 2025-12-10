@@ -651,6 +651,8 @@ https://catalog.data.gov/dataset/chicago-traffic-tracker-historical-congestion-e
   Zain, Sheemazain. *Chicago Weather Dataset 2024 (Derived from Open-Meteo)*. Kaggle, 2024.  
 https://www.kaggle.com/code/sheemazain/weather-dataset-2024/notebook
 
+Sivagnanam, Subhashini, Viswanath Nandigam, and Kai Lin. “Introducing the Open Science Chain: Protecting Integrity and Provenance of Research Data.” Practice and Experience in Advanced Research Computing (PEARC ’19), ACM, 2019, pp. 1–5.
+
 ### Software Tools Used
 
 * **Python** – Data processing and automation
