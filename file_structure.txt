@@ -1,0 +1,7 @@
+### File Structure
+- `data/processed/` – merged raw datasets  
+- `data/cleaned/` – cleaned analytical dataset  
+- `results/` – SHA-256 hash outputs  
+- `scripts/` – cleaning and hashing scripts  
+- `notebooks/` – analysis notebook  
+- `Snakefile` – automated workflow definition  
