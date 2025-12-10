@@ -612,7 +612,6 @@ After rerunning the notebook it is a good idea for the user to check their resul
 If the user wants to take reproducibility one step further they can delete the cleaned dataset and hash files, then rerun Snakemake from scratch. If the workflow is truly deterministic, it will generate the exact same cleaned dataset and the exact same SHA 256 hash as before. This is one of the key strengths of using Snakemake along with hashing which together make the project easy to reproduce on any machine.
 Finally if the user wants to build the final report, they can render the analysis notebook using Quarto. Running quarto render on the notebook will produce a fresh HTML report that contains all the visualizations and text. At that point the entire project has been fully reproduced starting from the repository all the way to the final results.
 
-
 ## Licenses
 
 ### Data Licenses
