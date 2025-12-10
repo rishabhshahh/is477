@@ -31,6 +31,10 @@ Ultimately, this project demonstrates how a transparent and reproducible data pi
 
 ## Project Outputs
 
+* **Box Data Archive:**
+Final output datasets are archived on Box at:
+https://uofi.box.com/s/2nmbetjnzwu4t9h2zkb11chevorw043k
+
 * **Processed Dataset:**
   `data/processed/final_dataset.csv`
 
